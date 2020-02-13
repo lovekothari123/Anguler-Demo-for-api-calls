@@ -1,0 +1,42 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div class="addCategoryHeading">
+  <img
+    alt="logo"
+    class="img-responsive categoryImag"
+    src="assets/img/adduser.png"
+    (click)="addNewCandidate()"
+  />
+  <!-- [style.color]="h1Style ? 'gray' : 'black'" -->
+  <h3 (click)="addNewCandidate()" class="addCandidateText">Add Candidate</h3>
+</div>
+<!-- <button (dblclick)="firstClick()">Test click event :- clicl me</button> -->
+<!-- //fas fa-clone fas fa-chalkboard-teacher fas fa-genderless fas fa-gift fas fa-portrait-->
+<p>List of candidates</p>
+<div *ngIf="deleteRecord">
+  <p class="deleteRecordText">
+    {{ deleteRecord.message }}
+  </p>
+</div>
+
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data; let i = index" class="fa fa-gift">
+    &nbsp;&nbsp;<b> {{ user.username }}</b>
+    <span class="edit fa fa-edit" (click)="clickOnEdit(user._Id)"></span>
+    <span class="close fa fa-trash" (click)="clickOndelete(user._Id)"></span>
+  </li>
+</ul>
+
+<!-- <ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+    <p *ngFor="let column of head">
+      &nbsp;&nbsp;
+
+      {{ user[column] }}
+      <span class="edit fa fa-edit"></span>
+      <span class="close fa fa-trash"></span>
+    </p>
+  </li>
+</ul> -->

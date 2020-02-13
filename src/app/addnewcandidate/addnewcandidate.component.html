@@ -1,0 +1,125 @@
+<div class="addNewCat">
+  <img alt="logo" src="assets/img/categoryIcon.png" class="addnewcatImag" />
+  <h1>Add Candidate</h1>
+</div>
+
+<div *ngIf="categorylist">
+  <form #contactForm="ngForm" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <h5 *ngIf="success">Your form is valid!</h5>
+    <!-- formControlName="name"  -->
+    <label>
+      <div class="d-block my-3">
+        <div class="mb-3">
+          <select
+            class="custom-select"
+            (change)="changeCity($event)"
+            formControlName="categorylist"
+          >
+            <!-- <option value="">Choose your Category</option> -->
+            <option value="">Choose your Category</option>
+            <option
+              class="option-selects"
+              *ngFor="let category of categorylist.data"
+              [ngValue]="category._Id"
+              >{{ category.name }}
+            </option>
+          </select>
+
+          <!-- error block -->
+          <div class="error" *ngIf="submitted && categorylist.errors?.required">
+            <sup>*</sup>Please enter your city name
+          </div>
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Add Candidate Image:
+      <input type="file" formControlName="image" (change)="preview($event)" />
+      <div *ngIf="submitted && messageForm.controls.image.errors" class="error">
+        <div *ngIf="messageForm.controls.image.errors.required">
+          Your Candidate image is required
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Enter Candidate Name:
+      <input type="text" formControlName="name" />
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">
+          Your Candidate name is required
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Enter Message:
+      <input type="text" formControlName="message" />
+      <div
+        *ngIf="submitted && messageForm.controls.message.errors"
+        class="error"
+      >
+        <div *ngIf="messageForm.controls.message.errors.required">
+          Your message is required
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Select start date:
+      <div class="startDateStyle">
+        <ejs-datetimepicker
+          class="datePickerStyle"
+          placeholder="Select a date"
+          [value]="dateValue"
+          [min]="minDate"
+          [max]="maxDate"
+          (change)="StartDateTime($event)"
+          (click)="StartDateTime($event)"
+          formControlName="startDate"
+        ></ejs-datetimepicker>
+      </div>
+      <div
+        *ngIf="submitted && messageForm.controls.message.errors"
+        class="error"
+      >
+        <div *ngIf="messageForm.controls.message.errors.required">
+          Your start date is required
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Select End date:
+      <div class="startDateStyle">
+        <ejs-datetimepicker
+          placeholder="Select a date"
+          [value]="dateValue"
+          [min]="minDate"
+          [max]="maxDate"
+          (change)="EndDateTime($event)"
+          (click)="EndDateTime($event)"
+          formControlName="enddate"
+        ></ejs-datetimepicker>
+      </div>
+      <div
+        *ngIf="submitted && messageForm.controls.message.errors"
+        class="error"
+      >
+        <div *ngIf="messageForm.controls.message.errors.required">
+          Your end date is required
+        </div>
+      </div>
+    </label>
+
+    <!-- <div *ngIf="CategoryId; then showUpdate; else showSend"></div>
+  <ng-template #showUpdate
+    ><input type="submit" value="Update message" class="cta" />
+  </ng-template>
+  <ng-template #showSend
+    ><input type="submit" value="Send message" class="cta"
+  /></ng-template> -->
+    <input type="submit" value="Send message" class="cta" />
+  </form>
+</div>

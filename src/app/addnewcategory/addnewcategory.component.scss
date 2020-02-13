@@ -1,0 +1,176 @@
+:host ::ng-deep .ck-editor__editable_inline {
+  min-height: 500px;
+}
+.center {
+  margin-top: 20px;
+  display: flex;
+  height: 300px;
+  background-color: #ff1124;
+  justify-content: center;
+}
+.ck-editor__editable_inline {
+  min-height: 500px;
+}
+.addNewCat {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  justify-items: center;
+  align-items: center;
+  align-self: center;
+  text-align: start;
+  .addnewcatImag {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+  }
+}
+
+label {
+  display: block;
+  input,
+  textarea {
+    display: block;
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 1em;
+  }
+
+  .error {
+    margin-top: -20px;
+    background: yellow;
+    padding: 0.5em;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+}
+
+.cta {
+  background: #7700ff;
+  border: none;
+  color: white;
+  margin-top: 30px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 1em;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.results {
+  margin-top: 50px;
+
+  strong {
+    display: block;
+  }
+  span {
+    margin-bottom: 20px;
+    display: block;
+  }
+}
+
+.table {
+  width: 100px;
+  height: 100px;
+}
+.table-bordered {
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: red($color: #000000);
+}
+.table-resizable {
+  background-color: red($color: #d42828);
+  background: green($color: #963737);
+}
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.popUpBoxStyle {
+  background: red($color: #6b2626) !important;
+  background-color: red($color: #000000) !important;
+}
+
+.EdiorDesign {
+  background-color: red($color: #000000);
+  background: red($color: #ad2323);
+}
+.closeStyle {
+  display: flex;
+  left: 0;
+  background-color: transparent;
+  width: 25px;
+  z-index: 4;
+  position: absolute;
+  margin-left: 3%;
+  margin-top: 7px;
+  color: antiquewhite;
+}
+.panel__top {
+  padding: 0;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  position: initial;
+  justify-content: center;
+  justify-content: space-between;
+}
+.panel__basic-actions {
+  position: initial;
+}
+
+.panel__basic_sve-actions {
+  padding: 0;
+  width: 6%;
+  margin-top: 10px;
+  display: flex;
+  position: absolute;
+  z-index: 4;
+  // justify-content: center;
+  // justify-content: space-between;
+}
+
+.editorStyle {
+  width: 100%;
+  height: auto;
+  min-height: 10px;
+}
+
+.categoryImag {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.template_one_sheet {
+  height: 310px !important;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.template_one_sheet:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: darken($color: #9c1a1a, $amount: 0);
+}
+
+.html_stlye_row {
+  display: flex;
+
+  flex-direction: row;
+}

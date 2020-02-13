@@ -1,0 +1,87 @@
+.gray {
+  color: red;
+}
+.larger {
+  font-size: 4em;
+}
+.addCategoryHeading {
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.categoryImag {
+  width: 35px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.categoryImag:hover {
+  background: #7700ff;
+}
+.addNewCategoryText {
+  cursor: pointer;
+}
+.addNewCategoryText:hover {
+  color: #7700ff;
+}
+.deleteRecordText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: red;
+  font-style: oblique;
+  opacity: 0.5;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    background: rgb(245, 243, 243);
+    padding: 1em;
+    border-radius: 4x;
+    margin-bottom: 7px;
+    // display: grid;
+    //@at-root
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(136, 70, 70);
+    display: block;
+    position: relative;
+  }
+  li:hover {
+    background: rgb(238, 200, 174);
+  }
+  img {
+    border-radius: 50%;
+    width: 100%;
+  }
+  /* Style the close button (span) */
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    padding: 12px 16px;
+    transform: translate(0%, -50%);
+  }
+  .close:hover {
+    background: #bbb;
+  }
+  .edit {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    padding: 12px 16px;
+    transform: translate(0%, -50%);
+  }
+  .edit:hover {
+    background: #bbb;
+  }
+}

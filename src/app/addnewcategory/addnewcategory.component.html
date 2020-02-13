@@ -1,0 +1,96 @@
+<!-- ============================ HTML CONTANNER HERE ============================ -->
+<div class="html_stlye_row">
+  <div
+    (click)="html_one_click()"
+    class="template_one_sheet"
+    [innerHTML]="template_one_sheet"
+  ></div>
+  <div
+    class="template_one_sheet"
+    (click)="html_two_click()"
+    [innerHTML]="template_two_sheet"
+  ></div>
+  <div
+    class="template_one_sheet"
+    (click)="html_three_click()"
+    [innerHTML]="template_three_sheet"
+  ></div>
+</div>
+<!-- ============================ HTML CONTANNER HERE ============================ -->
+<div>
+  <div class="addNewCat">
+    <img alt="logo" src="assets/img/categoryIcon.png" class="addnewcatImag" />
+    <h1>Add Category</h1>
+  </div>
+
+  <form #contactForm="ngForm" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <h5 *ngIf="success">Your form is valid!</h5>
+    <!-- formControlName="name"  -->
+    <label>
+      Category Name:
+      <input type="text" formControlName="name" [(ngModel)]="categoryName" />
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">
+          Your category name is required
+        </div>
+      </div>
+    </label>
+
+    <label>
+      Enter Category HTML:
+
+      <img
+        alt="logo"
+        class="categoryImag"
+        src="assets/img/pen.png"
+        (click)="open(content)"
+        placement="top"
+        ngbTooltip="Edit your HTML"
+      />
+
+      <div
+        class="editorStyle"
+        [style.border]="'1px solid black'"
+        [innerHTML]="myStyle"
+        tagName="textarea"
+        formControlName="message"
+      ></div>
+
+      <!-- <ckeditor
+      editorUrl="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"
+      tagName="textarea"
+    ></ckeditor> -->
+
+      <div
+        *ngIf="submitted && messageForm.controls.message.errors"
+        class="error"
+      >
+        <div *ngIf="messageForm.controls.message.errors.required">
+          A category HTML is required
+        </div>
+      </div>
+    </label>
+
+    <div *ngIf="CategoryId; then showUpdate; else showSend"></div>
+    <ng-template #showUpdate
+      ><input type="submit" value="Update message" class="cta" />
+    </ng-template>
+    <ng-template #showSend
+      ><input type="submit" value="Send message" class="cta"
+    /></ng-template>
+  </form>
+
+  <!-- (click)="d('Cross click')" -->
+  <ng-template class="popUpBoxStyle" #content let-c="close" let-d="dismiss">
+    <button class="closeStyle" (click)="closedModel(content)">
+      X
+    </button>
+    <div class="modal-header popUpBoxStyle">
+      <div class="panel__top">
+        <div class="panel__basic_sve-actions"></div>
+        <div id="gjs"></div>
+      </div>
+    </div>
+    <!-- HTML EDITOR CODE HERE -->
+  </ng-template>
+</div>
